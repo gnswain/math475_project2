@@ -14669,7 +14669,7 @@ We got this dataset from <a href="https://www.pro-football-reference.com/">https
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Preprocessing-*">Preprocessing *<a class="anchor-link" href="#Preprocessing-*">&#182;</a></h1><p>In order to obtain a data set that we are willing to work with, we must scrape data from pro-football-reference. Our ideal data set will have...</p>
+<h1 id="Preprocessing">Preprocessing<a class="anchor-link" href="#Preprocessing">&#182;</a></h1><p>In order to obtain a data set that we are willing to work with, we must scrape data from pro-football-reference. Our ideal data set will have all of the features mentioned above. We will ensure that no values are missing and that each feature is numerical, one hot encoding any categorical features.</p>
 <h1 id="Problem-Definition">Problem Definition<a class="anchor-link" href="#Problem-Definition">&#182;</a></h1><p>This is a classification problem. We're trying to predict whether a player was on an All-Pro 1st team or not based on their stats. More specifically, this is a binary classification problem.</p>
 <h1 id="Performance-Metric">Performance Metric<a class="anchor-link" href="#Performance-Metric">&#182;</a></h1><p>We will evaluate the performance of our model(s) using F1-score. This is because an F1-score presents a good balance between precision and recall and gives good results on imbalanced classification problems.</p>
 <h1 id="Bayes-Optimum-Estimate">Bayes Optimum Estimate<a class="anchor-link" href="#Bayes-Optimum-Estimate">&#182;</a></h1><p>Our estimate for the <em>Bayes Optimum</em> on this problem is that a player likely doesn't belong to an All-Pro 1st team. Our justification for our estimate is that there are only a small number of players chosen every season. Because of this, we end up with a lot more players that aren't on an All-Pro 1st team.</p>
@@ -14753,18 +14753,28 @@ We got this dataset from <a href="https://www.pro-football-reference.com/">https
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Reflection">Reflection<a class="anchor-link" href="#Reflection">&#182;</a></h1><p><em>How accurate was your time assessment? Was there anything that went significantly longer, or significantly shorter, than you expected?</em></p>
-<p><em>If you were forced to leave the project now and give this plan and this notebook to another person on your team, how useful do you think it would be? What information is missing?</em></p>
-<p>Three things we learned from this assignment:</p>
-<ul>
-<li><p>Thing 1</p>
+<h1 id="Reflection">Reflection<a class="anchor-link" href="#Reflection">&#182;</a></h1><h4 id="How-accurate-was-your-time-assessment?-Was-there-anything-that-went-significantly-longer,-or-significantly-shorter,-than-you-expected?"><em>How accurate was your time assessment? Was there anything that went significantly longer, or significantly shorter, than you expected?</em><a class="anchor-link" href="#How-accurate-was-your-time-assessment?-Was-there-anything-that-went-significantly-longer,-or-significantly-shorter,-than-you-expected?">&#182;</a></h4><p>Our time assessment was somewhat accurate; we were able to get more done than we expected. We got our web scraping done, and we were able to do a bit of data analysis on the data we collected. Web scraping went shorter than we expected because pandas has easy-to-use functions for reading tables from html.</p>
+<h4 id="If-you-were-forced-to-leave-the-project-now-and-give-this-plan-and-this-notebook-to-another-person-on-your-team,-how-useful-do-you-think-it-would-be?-What-information-is-missing?"><em>If you were forced to leave the project now and give this plan and this notebook to another person on your team, how useful do you think it would be? What information is missing?</em><a class="anchor-link" href="#If-you-were-forced-to-leave-the-project-now-and-give-this-plan-and-this-notebook-to-another-person-on-your-team,-how-useful-do-you-think-it-would-be?-What-information-is-missing?">&#182;</a></h4><p>We believe our notebook would be incredibly useful for someone else to use. Our work lays a solid foundation for our project idea, since we essentially customized our data set to contain the data that we wanted. Even if our successor were to find our data useluess, they could use our notebook as a guide to collecting their own data. We don't think any information is particularly missing.</p>
+<h4 id="Three-things-we-learned-from-this-assignment:">Three things we learned from this assignment:<a class="anchor-link" href="#Three-things-we-learned-from-this-assignment:">&#182;</a></h4><ul>
+<li><p>How to scrape web pages for data we want</p>
 </li>
-<li><p>Thing 2</p>
+<li><p>How to plan out a schedule for a project idea</p>
 </li>
-<li><p>Thing 3</p>
+<li><p>How to assess models built for an imbalanced classification problem</p>
 </li>
 </ul>
-<p><em>Do you think that this project would be useful to include in future Math 475/575 courses? If yes, why? If no, why not? Are there any specific changes that you would make to this project to make it more informative?</em></p>
+<h4 id="Do-you-think-that-this-project-would-be-useful-to-include-in-future-Math-475/575-courses?-If-yes,-why?-If-no,-why-not?-Are-there-any-specific-changes-that-you-would-make-to-this-project-to-make-it-more-informative?"><em>Do you think that this project would be useful to include in future Math 475/575 courses? If yes, why? If no, why not? Are there any specific changes that you would make to this project to make it more informative?</em><a class="anchor-link" href="#Do-you-think-that-this-project-would-be-useful-to-include-in-future-Math-475/575-courses?-If-yes,-why?-If-no,-why-not?-Are-there-any-specific-changes-that-you-would-make-to-this-project-to-make-it-more-informative?">&#182;</a></h4><p>We believe this project would be useful to include in future Math 475/575 courses. It does a good job of reinforcing the concepts involved with the overall machine learning model building process, since we have to plan out the entire process before doing any actual work. There aren't any changes we would make to the project. We think giving the student freedom to do what they want allows them to explore more options and learn more on their own.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 
 </div>
 </div>
