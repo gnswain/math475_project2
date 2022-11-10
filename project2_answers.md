@@ -15,157 +15,89 @@ We got this dataset from [https://www.pro-football-reference.com/](https://www.p
 
 # Features
 
-**1st team all-pro** - On the player and team pages, the words "all-pro" now mean first-team all-pro, according to the Associated Press all-pro team from 1940--present or the UPI team from 1931--1939.
+**year** Year the season took place.
 
-**2PM** - two-point conversions made.
+**player** Name of the player.
 
-**A/G** - attempts (either passing or rushing) per game.
+**tm** Team player was on.
 
-**ANY/A** - adjusted net yards per passing attempt: (pass yards + 20*(pass TD) - 45*(interceptions thrown) - sack yards)/(passing attempts + sacks). See AY/A.
+**age** Age of player.
 
-**AP1** - the number of times the player was named first team all-pro.
+**pos** Position of player (will only be QB in this dataset.)
 
-**Ast** - assists on tackles. See tackles. Pre-1994, assists are grouped with tackles. From 1994 to the present, they remain an unofficial stat, but are recorded consistently and should be complete in our database.
+**g** Games played that season.
 
-**Att** - attempts. If in a rushing table, this is rushing attempts. If in a passing table, it means passing attempts.
+**gs** Games started that season.
 
-**AV** - approximate value. This is our attempt to put a single number on each player-season since 1960 so that we can (very approximately) compare across years and across positions. See this About page for all the details.
+**wins** Amount of wins player had.
 
-**AvRk** - on coach's pages, this number is the average finish, within the division, of that coach's teams.
+**loses** Amount of loses player had.
 
-**AY/A** - adjusted yards per passing attempt: (pass yards + 20*(pass TD) - 45*(interceptions thrown))/(passing attempts). This stat was introduced, and the reasoning behind it thoroughly explained in a book called The Hidden Game of Football, by Bob Carroll, Pete Palmer, and John Thorn. Note that we are now using 20 yards per TD instead of 10.
+**ties** Amount of ties player had.
 
-**BB (position)** - blocking back (in the single wing).
+**pass_rk** Pass Rank, based off of yards. (1 would mean the player had the most passing yards in that season.)
 
-**Blck** - punts had blocked.
+**cmp** Pass completions.
 
-**Cmp%** - completion percentage: completions/(passing attempts).
+**pass_att** Pass attempts.
 
-**Expected W-L** - this is an estimate of what the team's record "should have been," given the team's points scored and allowed. The concept goes back to baseball analyst Bill James' Pythagorean formula.
+**cmp%** Completion percentage.
 
-**Expected Points** - expected points represent the estimated point value at the start of a given play, based on down, distance, and field position. Further explanation of the formula is on our blog.
+**pass_yds** Passing yards.
 
-**FantPos** - fantasy position. This is (for now) always either QB, RB, WR, or TE. The reason we need this column is that, to compute VBD, every player needs to be classified as one and only position. It gets a bit problematic for players like Eric Metcalf who played different positions at different points in their career. If you see a player-season that is misclassified, please let us know.
+**pass_td** Passing touchdowns.
 
-**FantPt** - fantasy points:
+**td%** Percentage of touchdowns thrown when attempted to pass.
 
--   Passing Yards: 1 point per 25 yards passing
--   Passing Touchdowns: 4 points
--   Interceptions: -2 points
--   Rushing Yards: 1 point per 10 yards
--   Rushing Touchdowns: 6 points
--   Receiving Yards: 1 point per 10 yards
--   Receiving Touchdowns: 6 points
--   Return Touchdowns: 6 points
--   Fumble Recovered for a Touchdown: 6 points
--   2-Point Conversions: 2 points
--   Fumbles Lost: -2 points
+**int** Interceptions thrown.
 
-**FF** - forced fumbles. We are still working on integrating this into our data set.
+**int%** Percentage of times intercepted when attempted to pass.
 
-**FGA** - field goals attempted.
+**pass_lng** Longest completed pass.
 
-**FGM** - field goals made.
+**pass_y/a** Yards gained per attempt.
 
-**FL (position)** - flanker.
+**ay/a** Adjusted yards gained per attempt. (Passing yards + 20 * Passing TD - 45 * Interceptions) / Passes Attempted
 
-**Fmb** - fumbles. This includes all fumbles, including those that were recovered by the fumbler's team.
+**y/c** Yards gained per completion.
 
-**FR** - fumble recoveries.
+**pass_y/g** Passing yards per game.
 
-**G** - games played.
+**rate** Quarterback rating.
 
-**GS** - games started. This is complete from 1980 forward, and partially complete before that.
+**sk** Sacks taken.
 
-**Int** - in a passing table, this means interceptions thrown. In a defensive table, it means interceptions caught.
+**yards_lost_sack** Yards lost due to sacks.
 
-**LH (position)** - left halfback.
+**sk%** Percentage of times sacked when attempting to pass. (Sacks) / (Passes Attempted + Sacks)
 
-**Lng** - long gain. This was the player's (or team's) longest gain of the season in that particular category.
+**ny/a** Net yards gained per pass attempt. (pass_yds - yards_lost_sack) / (pass_att + sk)
 
-**LS (position)** - left safety.
+**any/a** Adjusted net yards per pass attempt. (pass_yds - yards_lost_sack + (20 * pass_td) - (45 * int)) / (pass_att + sk)
 
-**MG (position)** - middle guard (in a 5-2 defense).
+**4qc** Fourth quarter comebacks.
 
-**NY/A** - net yards per passing attempt: (pass yards - sack yards)/(passing attempts + sacks).
+**gwd** Game winning drives.
 
-**OthTD** - other TDs: all touchdowns that were not rushing, receiving, kickoff return, punt return, interception return, or fumble return touchdowns.
+**rush_rk** Rushing rank. (Based off attempts, not yards.)
 
-**OvRank** - overall rank (for fantasy football). This denotes the player's overall rank (among all players, not just those at his position) for that season. See also VBD and fantasy points.
+**rush_att** Rushing attempts.
 
-**PB** - the number of times the player was a pro bowler.
+**rush_yds** Rushing yards.
 
-**PD** - passes defensed. A relatively new stat. We are still working on integrating it into our data set.
+**rush_td** Rushing touchdowns.
 
-**Pnt** - punts.
+**rush_lng** Longest rush.
 
-**Pos** - position. Note that this is upper-case if the player was his team's primary starter at the given position, it is lower-case if the player started some games but was not his team's primary starter. It is blank if the player did not start very many games (or none at all). There are no hard-and-fast rules for exactly who gets classified as a primary starter, a part-time starter, or a non-starter, but the information has been provided to us by the editors of the ESPN Pro Football Encyclopedia, who have made these designations after much research.
+**rush_y/a** Rushing yards per attempt.
 
-**PosRank** - position rank (for fantasy football). This denotes the player's rank within his position for that season. See also VBD, fantasy points, and OvRank.
+**rush_y/g** Rushing yards per game.
 
-**Pro Bowler** - A player is considered a pro bowler if he was named to the pro bowl as a starter, a reserve, or an injury replacement. If named to the team, a player is considered a pro bowler even if he does not attend the pro bowl due to injury.
+**fmb** Times fumbled.
 
-**R/G** - receptions per game.
+**ap_1st** If they made AP 1st team All-Pro.
 
-**Rate** - passer rating. Note that pro and college football use different formulas. Some details can be found here and you can calculate a passer rating using our NFL Passer Rating Calculator Tool.
-
-**Rec** - receptions.
-
-**RH (position)** - right halfback.
-
-**RRTD** - rushing TDs plus receiving TDs.
-
-**RS (position)** - right safety.
-
-**SE (position)** - split end.
-
-**Sk** - in a passing table (1969--present), this refers to times sacked. In a defensive table, it refers to the number of sacks a player or team made. For individuals, sacks have only been an official stat since 1982.
-
-**Sk%** - sack percentage: (times sacked)/(passing attempts + times sacked).
-
-**SoS** - Strength of Schedule indicates the combined winning percentages of the opponents this team played in a given year. Higher SoS indicates a tougher schedule, lower indicates easier.
-
-**SRS** - Simple Rating System, explained in this blog post, uses a team's point differential and strength of schedule to assign a rating to each team, with 0.0 considered average. The difference in two teams' SRS ratings can be considered to be a point spread should they play each other, disregarding home field advantage.
-St - the number of seasons in which the player was his team's primary starter at his position.
-Targets - pass targets, as given in the play-by-play account of the game. Note that pass locations are defined as long (15 or more yards) or short (less than 15 yards).
-
-**T/G** - in the team stats section of a coach's page, this denotes the team's takeaway/giveaway rank.
-
-**TB (position)** - tailback (in the single wing).
-
-**TD** - touchdowns.
-
-**TD%** - passing TD percentage: (passing TD)/(passing attempts).
-
-**Tkl** - tackles. We have tackle data for all players who were active in 1994 or later. Prior to 1994, the tackle data is unofficial, inconsistently recorded from team to team, and incomplete in our database. Also, before 1994, some teams recorded assists while others didn't, so we have lumped tackles plus assists together in the tackles column for those years. From 1994 to present, tackles remain an unofficial stat, but are recorded consistently and should be complete in our database.
-
-**VBD** - the player's fantasy value for the season. VBD stands for Value-Based Drafting, but the initials have come to stand for the result of the method (i.e. the value of the player) in addition to the method itself. The method was popularized by Joe Bryant of footballguys.com in the early 90s.
-
-Essentially, the idea is this: the value of a player is the difference between his fantasy points and a baseline, with the baseline being defined as the number of fantasy points that a relatively cheap replacement would get. I've defined the baselines as the fantasy point totals of the #12 QB, the #24 RB, the #30 WR, and the #12 TE for each season. I won't go into detail on why I chose these numbers, but if you are a fantasy footballer, you probably have some idea.
-
-Anyway, here's an example. In 1975, O.J. Simpson had 362 fantasy points. The #24 ranked running back that year was John Brockington who had 116 fantasy points. Thus, O.J.'s value for 1975 is defined to be 362 - 116, which is 246. But wait, there's just one more thing. Since the NFL schedule was only 14 games long back in those days, I'll multiply that 246 by 16/14 to get 281 (I've also adjusted the values for the strike-shortened seasons of 1982 and 1987 in this way).
-
-NOTE: any player who is below the baseline will be counted as having zero value.
-
-**wAV** - weighted career approximate value. See the entry on AV. The weighted career AV is computed by summing 100% of the player's best-season AV, 95% of his second-best-season AV, 90% of his third best, and so on. The idea is that the weighted career AV rating should weight peak seasons slightly more than "compiler"-type seasons.
-
-**WB (position)** - wingback (in the single wing).
-
-**XPA** - extra points attempted.
-
-**XPM** - extra points made.
-
-**Y/A** - yards per attempt.
-
-**Y/C** - yards per completion.
-
-**Y/G** - yards per game.
-
-**Y/R** - yards per reception.
-
-**Yds** - yards.
-
-**YScm** - yards from scrimmage. That is, rushing yards plus receiving yards.
+**ap_2nd** If they made AP 2nd team All-Pro.
 
 # Target
 
