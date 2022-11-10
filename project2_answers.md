@@ -107,7 +107,7 @@ We got this dataset from [https://www.pro-football-reference.com/](https://www.p
 
 In order to obtain a data set that we are willing to work with, we must scrape data from pro-football-reference. Our ideal data set will have...
 
-# Problem Defintion
+# Problem Definition
 
 This is a classification problem. We're trying to predict whether a player was on an All-Pro 1st team or not based on their stats. More specifically, this is a binary classification problem.
 
@@ -122,7 +122,7 @@ Our estimate for the _Bayes Optimum_ on this problem is that a player likely doe
 # Schedule
 
 -   **Collection of Data (1 hour)**
-    -   During this time, we'd solely focus on collecting data for our data set since our inital data set did not have a lot of information
+    -   During this time, we'd solely focus on collecting data for our data set since our initial data set did not have a lot of information
     -   We will web scrape various tables from pro-football-reference
     -   We'd also take the time to clean up our data and make sure it's in a form that can be used to build classification models
         -   This means removing any missing values and converting categorical features into numerical ones through one hot encoding
